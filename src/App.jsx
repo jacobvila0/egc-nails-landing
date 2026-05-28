@@ -28,13 +28,31 @@ export default function App() {
     },
   ]
 
-  const trabajos = [
-    "Diseño elegante",
-    "Semipermanente natural",
-    "Uñas con extensión",
-    "Tonos neutros",
-    "Look juvenil",
-    "Acabado moderno",
+      const trabajos = [
+      {
+        titulo: "Uñas semipermanentes",
+        imagen: "/trabajos/unas-semipermanentes-1.jpeg",
+      },
+      {
+        titulo: "Diseño elegante",
+        imagen: "/trabajos/unas-semipermanentes-2.jpeg",
+      },
+      {
+        titulo: "Uñas con extensión",
+        imagen: "/trabajos/unas-extension-1.jpeg",
+      },
+      {
+        titulo: "Extensión con acabado natural",
+        imagen: "/trabajos/unas-extension-2.jpeg",
+      },
+      {
+        titulo: "Diseño personalizado",
+        imagen: "/trabajos/unas-diseno-1.jpeg",
+      },
+      {
+        titulo: "Acabado moderno",
+        imagen: "/trabajos/unas-diseno-2.jpeg",
+      },
   ]
 
   return (
@@ -51,6 +69,9 @@ export default function App() {
           <nav className="hidden gap-6 text-sm text-stone-600 md:flex">
             <a href="#servicios" className="hover:text-rose-500">
               Servicios
+            </a>
+            <a href="#peinados" className="hover:text-rose-500">
+              Peinados
             </a>
             <a href="#trabajos" className="hover:text-rose-500">
               Trabajos
@@ -122,17 +143,66 @@ export default function App() {
               </div>
             </div>
 
-            <Card className="rounded-[2rem] border-rose-100 bg-white/80 shadow-2xl shadow-rose-100">
-              <CardContent className="p-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="flex h-56 items-end rounded-[1.5rem] bg-gradient-to-br from-rose-100 to-pink-200 p-5 font-semibold text-rose-700">
-                    Foto de uñas
+            <Card className="rounded-[2rem] border-rose-100 bg-white/90 shadow-2xl shadow-rose-100">
+              <CardContent className="p-5">
+                <div className="mb-5 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-rose-400">
+                      Galería EGC.NAILS
+                    </p>
+                    <h3 className="mt-1 text-2xl font-bold tracking-tight text-stone-900">
+                      Diseños destacados
+                    </h3>
                   </div>
-                  <div className="flex h-56 items-end rounded-[1.5rem] bg-gradient-to-br from-stone-100 to-amber-100 p-5 font-semibold text-stone-700">
-                    Diseño neutro
+
+                  <span className="rounded-full bg-rose-50 px-4 py-2 text-sm font-semibold text-rose-500">
+                    Vallada
+                  </span>
+                </div>
+
+                <div className="grid gap-3">
+                  <div className="relative overflow-hidden rounded-[1.5rem]">
+                    <img
+                      src="/trabajos/unas-semipermanentes-1.jpeg"
+                      alt="Uñas semipermanentes EGC.NAILS"
+                      className="h-72 w-full object-cover"
+                    />
+
+                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/45 to-transparent p-5">
+                      <p className="text-sm font-semibold text-white">
+                        Uñas semipermanentes
+                      </p>
+                    </div>
                   </div>
-                  <div className="col-span-2 flex h-56 items-end rounded-[1.5rem] bg-gradient-to-br from-pink-100 via-rose-50 to-stone-100 p-5 font-semibold text-stone-700">
-                    Trabajo destacado de EGC.NAILS
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div className="relative overflow-hidden rounded-[1.5rem]">
+                      <img
+                        src="/trabajos/unas-extension-1.jpeg"
+                        alt="Uñas con extensión EGC.NAILS"
+                        className="h-44 w-full object-cover"
+                      />
+
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/45 to-transparent p-4">
+                        <p className="text-sm font-semibold text-white">
+                          Extensión
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="relative overflow-hidden rounded-[1.5rem]">
+                      <img
+                        src="/trabajos/unas-diseno-1.jpeg"
+                        alt="Trabajo destacado EGC.NAILS"
+                        className="h-44 w-full object-cover"
+                      />
+
+                      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/45 to-transparent p-4">
+                        <p className="text-sm font-semibold text-white">
+                          Diseño destacado
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -176,6 +246,87 @@ export default function App() {
           </div>
         </section>
 
+        <section id="peinados" className="bg-[#fff7f2] px-5 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-sm uppercase tracking-[0.3em] text-rose-400">
+                Peinados
+              </p>
+              <h2 className="mt-3 text-4xl font-bold tracking-tight">
+                Recogidos y secados
+              </h2>
+              <p className="mt-4 text-stone-600">
+                También puedes pedir cita para recogidos y secados. Ideales para eventos,
+                ocasiones especiales o para verte arreglada con un acabado cuidado.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2">
+              <Card className="overflow-hidden rounded-[2rem] border-rose-100 bg-white shadow-xl shadow-rose-100/60">
+                <div className="relative">
+                  <video
+                    src="/trabajos/peinado-1.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="h-[520px] w-full bg-stone-100 object-cover"
+                  />
+
+                  <div className="absolute left-4 top-4 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-rose-500 shadow-sm">
+                    Recogido
+                  </div>
+                </div>
+
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold">Recogido elegante</h3>
+                  <p className="mt-3 leading-7 text-stone-600">
+                    Un acabado cuidado para eventos, celebraciones o días especiales.
+                  </p>
+                  <a
+                    href="#citas"
+                    className="mt-4 inline-block text-sm font-semibold text-rose-500 underline underline-offset-4"
+                  >
+                    Pedir cita para un recogido
+                  </a>
+                </CardContent>
+              </Card>
+
+              <Card className="overflow-hidden rounded-[2rem] border-rose-100 bg-white shadow-xl shadow-rose-100/60">
+                <div className="relative">
+                  <video
+                    src="/trabajos/peinado-2.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="h-[520px] w-full bg-stone-100 object-cover"
+                  />
+
+                  <div className="absolute left-4 top-4 rounded-full bg-white/90 px-4 py-2 text-sm font-semibold text-rose-500 shadow-sm">
+                    Secado
+                  </div>
+                </div>
+
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold">Secado con acabado bonito</h3>
+                  <p className="mt-3 leading-7 text-stone-600">
+                    Para conseguir un look pulido, natural y favorecedor sin complicarte.
+                  </p>
+                  <a
+                    href="#citas"
+                    className="mt-4 inline-block text-sm font-semibold text-rose-500 underline underline-offset-4"
+                  >
+                    Pedir cita para secado
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         <section id="trabajos" className="px-5 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -204,16 +355,19 @@ export default function App() {
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {trabajos.map((trabajo, index) => (
+              {trabajos.map((trabajo) => (
                 <Card
-                  key={trabajo}
+                  key={trabajo.titulo}
                   className="overflow-hidden rounded-[1.5rem] border-rose-100 bg-white shadow-sm"
                 >
-                  <div className="flex h-64 items-end bg-gradient-to-br from-rose-100 via-pink-50 to-stone-100 p-5 font-semibold text-stone-600">
-                    Foto {index + 1}
-                  </div>
+                  <img
+                    src={trabajo.imagen}
+                    alt={trabajo.titulo}
+                    className="h-72 w-full object-cover"
+                  />
+
                   <CardContent className="p-5">
-                    <h3 className="font-bold">{trabajo}</h3>
+                    <h3 className="font-bold">{trabajo.titulo}</h3>
                     <a
                       href="#citas"
                       className="mt-3 inline-block text-sm font-semibold text-rose-500 underline underline-offset-4"
