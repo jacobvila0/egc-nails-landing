@@ -1,15 +1,7 @@
-import { useState } from "react"
 import { Button } from "./components/ui/button"
 import { Card, CardContent } from "./components/ui/card"
 
 export default function App() {
-const [sent, setSent] = useState(false)
-
-function handleSubmit(e) {
-e.preventDefault()
-setSent(true)
-}
-
 const servicios = [
 {
 titulo: "Uñas semipermanentes",
@@ -99,9 +91,9 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
           </h2>
 
           <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">
-            En EGC.NAILS puedes pedir cita para uñas semipermanentes,
-            uñas con extensión, recogidos y secados de pelo. Un estilo
-            juvenil, cercano y cuidado desde Vallada.
+            En EGC.NAILS puedes pedir cita para uñas semipermanentes, uñas
+            con extensión, recogidos y secados de pelo. Un estilo juvenil,
+            cercano y cuidado desde Vallada.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -350,7 +342,11 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
             variant="outline"
             className="w-fit rounded-full border-rose-200 bg-white"
           >
-            <a href="https://www.instagram.com/egc.nails/" target="_blank">
+            <a
+              href="https://www.instagram.com/egc.nails/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Ver Instagram
             </a>
           </Button>
@@ -393,122 +389,47 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
           <p className="text-sm uppercase tracking-[0.3em] text-rose-400">
             Citas
           </p>
+
           <h2 className="mt-3 text-4xl font-bold tracking-tight">
             Solicita tu cita
           </h2>
+
           <p className="mt-4 leading-7 text-stone-600">
-            Esta primera versión no reserva automáticamente. Recoge la
-            solicitud y después EGC.NAILS confirma la disponibilidad por
-            Instagram.
+            Rellena el formulario con tus datos, el servicio que quieres y
+            tu disponibilidad. Después EGC.NAILS te contactará por Instagram
+            para confirmar la cita.
           </p>
 
           <div className="mt-6 rounded-[1.5rem] border border-rose-100 bg-rose-50 p-5 text-sm text-stone-600">
-            <p className="font-bold text-stone-900">Funcionamiento:</p>
+            <p className="font-bold text-stone-900">Importante:</p>
             <p className="mt-2">
-              La clienta pide cita → se guarda la solicitud → se responde
-              manualmente por Instagram.
+              Enviar el formulario no confirma automáticamente la cita.
+              Primero se revisa la disponibilidad y después se confirma por
+              Instagram.
+            </p>
+          </div>
+
+          <div className="mt-6 rounded-[1.5rem] border border-stone-100 bg-white p-5 text-sm text-stone-600 shadow-sm">
+            <p className="font-bold text-stone-900">Canal de contacto:</p>
+            <p className="mt-2">
+              Asegúrate de escribir bien tu usuario de Instagram para que
+              podamos responderte.
             </p>
           </div>
         </div>
 
         <Card className="rounded-[2rem] border-rose-100 bg-[#fffaf7] shadow-xl shadow-rose-100">
-          <CardContent className="p-6">
-            {sent ? (
-              <div className="rounded-[1.5rem] bg-white p-8 text-center">
-                <div className="text-4xl">✅</div>
-                <h3 className="mt-4 text-2xl font-bold">
-                  Solicitud recibida
-                </h3>
-                <p className="mt-3 text-stone-600">
-                  Gracias. EGC.NAILS te contactará por Instagram para
-                  confirmar la cita.
-                </p>
-                <Button
-                  onClick={() => setSent(false)}
-                  className="mt-6 rounded-full bg-rose-400 hover:bg-rose-500"
-                >
-                  Enviar otra solicitud
-                </Button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="grid gap-4">
-                <div className="grid gap-4 md:grid-cols-2">
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Nombre
-                    <input
-                      required
-                      className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                      placeholder="Tu nombre"
-                    />
-                  </label>
-
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Instagram
-                    <input
-                      required
-                      className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                      placeholder="@usuario"
-                    />
-                  </label>
-                </div>
-
-                <label className="grid gap-2 text-sm font-semibold">
-                  Servicio
-                  <select
-                    required
-                    className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                  >
-                    <option value="">Selecciona un servicio</option>
-                    <option>Uñas semipermanentes</option>
-                    <option>Uñas con extensión</option>
-                    <option>Recogido de pelo</option>
-                    <option>Secado de pelo</option>
-                    <option>Otro</option>
-                  </select>
-                </label>
-
-                <div className="grid gap-4 md:grid-cols-2">
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Día preferido
-                    <input
-                      required
-                      className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                      placeholder="Ej. viernes"
-                    />
-                  </label>
-
-                  <label className="grid gap-2 text-sm font-semibold">
-                    Franja horaria
-                    <select
-                      required
-                      className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                    >
-                      <option value="">Selecciona</option>
-                      <option>Mañanas</option>
-                      <option>Tardes</option>
-                      <option>Me da igual</option>
-                    </select>
-                  </label>
-                </div>
-
-                <label className="grid gap-2 text-sm font-semibold">
-                  Comentario
-                  <textarea
-                    rows="4"
-                    className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
-                    placeholder="Cuéntanos qué diseño quieres o si tienes alguna duda"
-                  />
-                </label>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="rounded-full bg-rose-400 hover:bg-rose-500"
-                >
-                  Enviar solicitud
-                </Button>
-              </form>
-            )}
+          <CardContent className="p-3 sm:p-6">
+            <iframe
+              src="https://tally.so/r/J9MdQr"
+              width="100%"
+              height="820"
+              frameBorder="0"
+              marginHeight="0"
+              marginWidth="0"
+              title="Solicitud de cita EGC.NAILS"
+              className="rounded-[1.5rem]"
+            />
           </CardContent>
         </Card>
       </div>
@@ -583,6 +504,7 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
           <a
             href="https://www.instagram.com/egc.nails/"
             target="_blank"
+            rel="noreferrer"
             className="mt-2 block text-2xl font-bold underline underline-offset-4"
           >
             @egc.nails
@@ -596,7 +518,11 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
             size="lg"
             className="mt-6 rounded-full bg-white text-rose-500 hover:bg-rose-50"
           >
-            <a href="https://www.instagram.com/egc.nails/" target="_blank">
+            <a
+              href="https://www.instagram.com/egc.nails/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Ir a Instagram
             </a>
           </Button>
@@ -605,7 +531,6 @@ Beauty Studio </p> <h1 className="text-xl font-bold tracking-tight">EGC.NAILS</h
     </section>
   </main>
 </div>
-
 
 )
 }
