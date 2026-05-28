@@ -324,7 +324,8 @@ export default function App() {
                           className="rounded-2xl border border-rose-100 bg-white px-4 py-3 outline-none focus:border-rose-300"
                         >
                           <option value="">Selecciona</option>
-                          <option>Tarde</option>
+                          <option>Mañanas</option>
+                          <option>Tardes</option>
                           <option>Me da igual</option>
                         </select>
                       </label>
